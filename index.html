@@ -1,157 +1,266 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nullfm.ai | Autonomous Coordination Layer for Viticulture</title>
-    <!-- Tailwind CSS for modern, flexible styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-color: #14532d; /* Deep Forest Green background */
-            color: #fef08a; /* Soft Cream text color */
+            background-color: #032111; /* Deep forest green */
+            color: #d1fae5;
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-image: radial-gradient(circle at 50% 50%, #04381b 0%, #021a0d 100%);
         }
-        .interactive-card {
-            background-color: #166534;
-            border: 1px solid #15803d;
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-            transition: all 0.3s ease;
+        
+        /* High-Tech Glowing Borders and Shadow Effects matching the mockup */
+       .neon-glow-card {
+            background: linear-gradient(135deg, #022e18 0%, #043a1e 100%);
+            border: 2px solid #52b788;
+            box-shadow: 0 0 25px rgba(82, 183, 136, 0.45), inset 0 0 15px rgba(82, 183, 136, 0.15);
+            border-radius: 18px;
+            transition: all 0.3s ease-in-out;
         }
-        .interactive-card:hover {
-            box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
-            transform: translateY(-2px);
+
+       .neon-glow-card:hover {
+            box-shadow: 0 0 35px rgba(116, 198, 157, 0.7), inset 0 0 20px rgba(116, 198, 157, 0.25);
+            border-color: #74c69d;
+        }
+
+       .glow-title {
+            color: #bef264; /* Lime-cream glow text */
+            text-shadow: 0 0 12px rgba(190, 242, 100, 0.6);
+        }
+
+        /* Ambient Wave Lines Background Accent */
+       .ambient-waves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Pill Buttons matching the design */
+       .pill-button {
+            background-color: transparent;
+            border: 1.5px solid #bef264;
+            color: #bef264;
+            border-radius: 9999px;
+            padding: 6px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 10px rgba(254, 240, 138, 0.1);
+        }
+
+       .pill-btn:hover,.pill-btn-alert:hover {
+            transform: scale(1.03);
+        }
+
+       .pill-btn {
+            border: 1.5px solid #52b788;
+            background: rgba(6, 78, 59, 0.2);
+            color: #d8f3dc;
+            box-shadow: 0 0 10px rgba(82, 183, 136, 0.2);
+            transition: all 0.2s ease;
+        }
+
+       .pill-btn:hover {
+            background: #52b788;
+            color: #032111;
+            box-shadow: 0 0 20px rgba(82, 183, 136, 0.6);
+        }
+
+       .pill-btn-alert {
+            border: 1.5px solid #f87171;
+            background: rgba(127, 29, 29, 0.2);
+            color: #fca5a5;
+            box-shadow: 0 0 10px rgba(248, 113, 113, 0.2);
+            transition: all 0.2s ease;
+        }
+
+       .pill-btn-alert:hover {
+            background: #f87171;
+            color: #450a0a;
+            box-shadow: 0 0 20px rgba(248, 113, 113, 0.6);
         }
     </style>
 </head>
-<body class="min-h-screen antialiased p-4 md:p-8">
+<body class="min-h-screen antialiased py-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden flex justify-center">
 
-    <!-- Top Navigation Bar -->
-    <header class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between border-b border-green-700/50 pb-6 mb-8 gap-4">
-        <div class="text-center sm:text-left">
-            <h1 class="text-3xl font-bold tracking-tight text-white">Nullfm.ai</h1>
-            <p class="text-xs font-medium italic text-green-300 mt-1">Autonomous Machine-to-Machine Coordination Layer for Viticulture</p>
-        </div>
-        <nav class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-green-200">
-            <a href="#" class="hover:text-white transition">Home</a>
-            <a href="#" class="hover:text-white transition">Protocol</a>
-            <a href="#" class="hover:text-white transition">Network</a>
-            <a href="#" class="hover:text-white transition">Analytics</a>
-            <a href="#" class="hover:text-white transition">API</a>
-        </nav>
-    </header>
+    <svg class="ambient-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#52b788" fill-opacity="1" d="M0,288L120,266.7C240,245,480,203,720,202.7C960,203,1200,245,1320,266.7L1440,288L1440,0L1320,0C1200,0,960,0,720,0C480,0,360,0,240,0L120,0L0,0Z"></path>
+    </svg>
 
-    <main class="max-w-7xl mx-auto space-y-12">
+    <div class="container max-w-4xl mx-auto space-y-10 relative z-10">
         
-        <!-- Central Featured Layout Block (Autonomous Transaction & Coordination) -->
-        <section class="interactive-card rounded-2xl p-6 md:p-8 relative overflow-hidden">
-            <!-- Decorative Tech Accents representing the network lines -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <header class="text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white mb-1">Nullfm.ai</h1>
+            <p class="text-xs font-semibold uppercase tracking-wider text-green-400">Autonomous Machine-to-Machine Coordination Layer for Viticulture</p>
             
-            <div class="relative z-10 text-center max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold text-white mb-4">Autonomous Transaction and Coordination</h2>
-                <p class="text-base leading-relaxed text-green-100">
+            <nav class="flex justify-center gap-6 mt-6">
+                <a href="#home" class="nav-link text-xs uppercase tracking-widest font-semibold text-emerald-300 hover:text-white transition">Home</a>
+                <a href="#protocol" class="nav-link text-xs uppercase tracking-widest font-semibold text-emerald-300 hover:text-white transition">Protocol</a>
+                <a href="#network" class="nav-link text-xs uppercase tracking-widest font-semibold text-emerald-300 hover:text-white transition">Network</a>
+                <a href="#analytics" class="nav-link text-xs uppercase tracking-widest font-semibold text-emerald-300 hover:text-white transition">Analytics</a>
+                <a href="#api" class="nav-link text-xs uppercase tracking-widest font-semibold text-emerald-300 hover:text-white transition">API</a>
+            </nav>
+        </header>
+
+        <section class="neon-glow-card p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex-shrink-0">
+                <svg viewBox="0 0 64 64" width="65" height="65" fill="none" stroke="#74c69d" stroke-width="2" class="filter drop-shadow-[0_0_8px_rgba(116,198,157,0.5)]">
+                    <rect x="24" y="24" width="16" height="16" rx="2" />
+                    <circle cx="32" cy="32" r="3" fill="#74c69d" />
+                    <path d="M10 20 h14 v24 h-14 z M40 20 h14 v24 h-14 z" stroke-dasharray="2 2" />
+                    <line x1="24" y1="32" x2="14" y2="32" />
+                    <line x1="40" y1="32" x2="50" y2="32" />
+                    <path d="M28 48 Q32 54 36 48" />
+                    <line x1="32" y1="40" x2="32" y2="50" />
+                </svg>
+            </div>
+
+            <div class="text-center md:text-left flex-grow max-w-xl">
+                <h2 class="text-xl font-bold text-white mb-3 text-center">Autonomous Transaction and Coordination</h2>
+                <p class="text-sm leading-relaxed text-emerald-100 text-center md:text-left">
                     Nullfm.ai is developing a lightweight, autonomous transaction and coordination protocol for agricultural ecosystems. Our architecture enables specialized software agents to securely stream operational telemetry, evaluate environmental data economics, and execute time-sensitive resource decisions via machine-native commerce.
                 </p>
             </div>
+
+            <div class="flex-shrink-0">
+                <svg viewBox="0 0 64 64" width="65" height="65" fill="none" stroke="#74c69d" stroke-width="2" class="filter drop-shadow-[0_0_8px_rgba(116,198,157,0.5)]">
+                    <path d="M24 60 L30 16 L34 16 L40 60" />
+                    <line x1="27" y1="38" x2="37" y2="38" />
+                    <line x1="28" y1="48" x2="36" y2="48" />
+                    <circle cx="32" cy="12" r="4" fill="#74c69d" />
+                    <path d="M22 12 Q14 12 10 6" stroke-width="1.5" />
+                    <path d="M42 12 Q50 12 54 6" stroke-width="1.5" />
+                </svg>
+            </div>
+
         </section>
 
-        <!-- The Data-Routing Bottleneck Section -->
         <section class="space-y-6">
-            <div class="max-w-3xl">
-                <h3 class="text-xl font-bold text-white mb-2">The Data-Routing Bottleneck</h3>
-                <p class="text-sm leading-relaxed text-green-200">
+            <div>
+                <h2 class="text-xl font-bold text-white mb-2">The Data-Routing Bottleneck</h2>
+                <p class="text-sm leading-relaxed text-emerald-300">
                     Modern viticulture increasingly depends on high-resolution environmental intelligence—including soil moisture networks, hyperlocal microclimate forecasting, frost-risk monitoring, and predictive disease models. However, because these systems exist in siloed vendor networks, true integration remains slow and fragmented.
                 </p>
             </div>
 
-            <!-- Side-by-Side Interactive Graphical Panels -->
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Panel 1: Manual Resource Coordination Diagram -->
-                <div class="interactive-card rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <h4 class="font-bold text-white text-lg mb-3">Manual Resource Coordination</h4>
-                        <p class="text-xs text-green-200 mb-6">Vineyard operators must act as human manual routers, checking disparate third-party dashboards to handle day-to-day valve, pump, and fan operations.</p>
+                
+                <div class="neon-glow-card p-6 flex flex-col justify-between items-center text-center">
+                    <div class="w-full">
+                        <h3 class="text-lg font-bold text-white mb-2">Manual Resource Coordination</h3>
+                        <p class="text-xs text-emerald-200 mb-6">Vineyard operators must act as human manual routers, checking disparate third-party dashboards to handle day-to-day valve, pump, and fan operations.</p>
                     </div>
-                    <!-- Stylized SVG Graphical Dashboard Interface -->
-                    <div class="bg-emerald-950/60 border border-green-800 rounded-lg p-4 mb-4 flex items-center justify-around h-32">
-                        <div class="border border-green-600/40 rounded p-2 text-center bg-emerald-900/40">
-                            <div class="w-8 h-8 mx-auto mb-1 rounded-full bg-green-500/20 flex items-center justify-center">
-                                <span class="text-green-400 text-xs">👤</span>
+
+                    <div class="w-full bg-emerald-950/60 border border-emerald-800/80 rounded-xl p-4 flex items-center justify-around h-32 mb-6">
+                        <div class="border border-emerald-700/50 rounded-lg p-2 text-center bg-emerald-900/40">
+                            <div class="w-7 h-7 mx-auto mb-1 rounded-full bg-green-500/20 flex items-center justify-center">
+                                <span class="text-green-400 text-sm">👤</span>
                             </div>
-                            <span class="text-[10px] block text-green-300 font-mono">human-router</span>
+                            <span class="text-[9px] block text-emerald-300 font-mono">human-router</span>
                         </div>
-                        <div class="flex flex-col justify-between h-full py-2">
-                            <div class="w-12 h-1 bg-green-600 rounded"></div>
-                            <div class="w-12 h-1 bg-green-600 rounded"></div>
-                            <div class="w-12 h-1 bg-green-600 rounded"></div>
+                        <div class="flex flex-col justify-between h-full py-3">
+                            <div class="w-10 h-0.5 bg-emerald-600 rounded"></div>
+                            <div class="w-10 h-0.5 bg-emerald-600 rounded"></div>
                         </div>
                         <div class="space-y-2">
-                            <div class="border border-green-600/40 rounded px-2 py-1 bg-emerald-900/40 text-center">
-                                <span class="text-[10px] block text-green-300 font-mono">🚰 Valve A</span>
+                            <div class="border border-emerald-700/50 rounded-md px-2 py-0.5 bg-emerald-900/40 text-center">
+                                <span class="text-[9px] block text-emerald-300 font-mono">🚰 Valve A</span>
                             </div>
-                            <div class="border border-green-600/40 rounded px-2 py-1 bg-emerald-900/40 text-center">
-                                <span class="text-[10px] block text-green-300 font-mono">💨 Fan B</span>
+                            <div class="border border-emerald-700/50 rounded-md px-2 py-0.5 bg-emerald-900/40 text-center">
+                                <span class="text-[9px] block text-emerald-300 font-mono">💨 Fan B</span>
                             </div>
                         </div>
                     </div>
-                    <button class="w-full bg-green-800 hover:bg-green-700 text-white text-xs font-semibold py-2 px-4 rounded transition">Learn More</button>
+
+                    <a href="#explore" class="pill-btn rounded-full px-6 py-2 text-xs font-semibold transition">Learn More</a>
                 </div>
 
-                <!-- Panel 2: The Latency Liability Diagram -->
-                <div class="interactive-card rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <h4 class="font-bold text-white text-lg mb-3">The Latency Liability</h4>
-                        <p class="text-xs text-green-200 mb-6">During rapid weather drops or heat events, delays in translating telemetry streams into physical field action directly introduce crop vulnerability and resource waste.</p>
+                <div class="neon-glow-card p-6 flex flex-col justify-between items-center text-center border-red-500/60 shadow-[0_0_20px_rgba(239,68,68,0.25)]">
+                    <div class="w-full">
+                        <h3 class="text-lg font-bold text-white mb-2">The Latency Liability</h3>
+                        <p class="text-xs text-emerald-200 mb-6">During rapid weather drops or heat events, delays in translating telemetry streams into physical field action directly introduce crop vulnerability and resource waste.</p>
                     </div>
-                    <!-- Stylized SVG Latency / Risk Interface -->
-                    <div class="bg-emerald-950/60 border border-green-800 rounded-lg p-4 mb-4 flex items-center justify-around h-32">
+
+                    <div class="w-full bg-emerald-950/60 border border-emerald-800/80 rounded-xl p-4 flex items-center justify-around h-32 mb-6">
                         <div class="text-center">
-                            <div class="text-red-400 text-3xl animate-pulse">⚠️</div>
-                            <span class="text-[10px] block text-red-300 font-mono mt-1">weather warning</span>
+                            <div class="text-red-400 text-2xl animate-pulse">⚠️</div>
+                            <span class="text-[9px] block text-red-300 font-mono mt-1">weather warning</span>
                         </div>
-                        <div class="w-16 h-0.5 bg-red-600 relative">
-                            <div class="absolute -top-1 left-1/2 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+                        <div class="w-12 h-0.5 bg-red-600 relative">
+                            <div class="absolute -top-1 left-1/2 w-2 h-2 bg-red-400 rounded-full animate-ping"></div>
                         </div>
                         <div class="text-center">
                             <div class="text-xl">🍇🍂</div>
-                            <div class="w-20 bg-red-950 border border-red-700 h-3 rounded mt-2 overflow-hidden">
-                                <div class="bg-red-500 h-full w-4/5 animate-pulse"></div>
+                            <div class="w-20 bg-red-950/80 border border-red-700 h-2.5 rounded-full mt-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-yellow-500 to-red-500 h-full w-[85%]"></div>
                             </div>
-                            <span class="text-[9px] block text-red-400 font-mono mt-1">DELAY RISK</span>
+                            <span class="text-[8px] block text-red-400 font-mono mt-1">DELAY RISK</span>
                         </div>
                     </div>
-                    <button class="w-full bg-green-800 hover:bg-green-700 text-white text-xs font-semibold py-2 px-4 rounded transition">Learn More</button>
+
+                    <a href="#mitigate" class="pill-btn-alert rounded-full px-6 py-2 text-xs font-semibold transition">Learn More</a>
                 </div>
+
             </div>
         </section>
 
-        <!-- Network Map Placeholder Visual Section -->
-        <section class="interactive-card rounded-xl p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Network Map</h3>
-            <p class="text-xs text-green-200 mb-6">Real-time status of autonomous node distributions and ledger synchronization across agricultural validation zones.</p>
-            <div class="bg-emerald-950/40 border border-green-800/80 rounded-lg p-4 h-48 flex items-center justify-center relative overflow-hidden">
-                <!-- Abstract lines simulating a simplified world map visual -->
-                <div class="absolute inset-0 opacity-25 flex items-center justify-center">
-                    <span class="text-green-300 text-8xl font-mono select-none">🌐</span>
-                </div>
-                <div class="relative z-10 flex flex-wrap gap-4 justify-center">
-                    <span class="bg-green-900/80 border border-green-500 text-green-200 px-3 py-1 rounded-full text-xs font-mono">● Node_OR_01 Active</span>
-                    <span class="bg-green-900/80 border border-green-500 text-green-200 px-3 py-1 rounded-full text-xs font-mono">● Node_OR_02 Active</span>
-                    <span class="bg-green-900/80 border border-green-500 text-green-200 px-3 py-1 rounded-full text-xs font-mono">● Ledger_Sync_OK</span>
+        <section class="neon-glow-card p-6">
+            <h2 class="text-xl font-bold text-white mb-2">Network Map</h2>
+            <p class="text-xs text-emerald-300 mb-6">Real-time status of autonomous node distributions and ledger synchronization across agricultural validation zones.</p>
+            
+            <div class="w-full bg-[#01140a] border border-emerald-900/60 rounded-xl p-4 h-52 flex items-center justify-center relative overflow-hidden mb-6">
+                
+                <svg viewBox="0 0 800 250" class="absolute inset-0 w-full h-full stroke-emerald-900/40" fill="none" stroke-width="1">
+                    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800" />
+                    <path d="M100 0 V250 M200 0 V250 M300 0 V250 M400 0 V250 M500 0 V250 M600 0 V250 M700 0 V250" />
+                    
+                    <path d="M 160 160 Q 300 60 440 130 T 680 90" stroke="#34d399" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.8" />
+                    <path d="M 120 90 Q 380 200 580 80" stroke="#059669" stroke-width="1" stroke-dasharray="3 3" opacity="0.5" />
+                    
+                    <circle cx="160" cy="160" r="5" fill="#34d399" class="animate-ping" />
+                    <circle cx="160" cy="160" r="4.5" fill="#34d399" />
+                    
+                    <circle cx="440" cy="130" r="4" fill="#10b981" />
+                    <circle cx="680" cy="90" r="5" fill="#059669" />
+                    <circle cx="310" cy="120" r="3.5" fill="#34d399" />
+                    
+                    <circle cx="560" cy="150" r="6" fill="#ef4444" />
+                    
+                    <text x="175" y="165" fill="#a7f3d0" font-size="10" font-family="monospace">NODE_OR_01</text>
+                    <text x="455" y="135" fill="#a7f3d0" font-size="10" font-family="monospace">GATEWAY_VALVE_B</text>
+                    <text x="575" y="155" fill="#fca5a5" font-size="10" font-family="monospace">ALERT_E2</text>
+                </svg>
+
+                <div class="relative z-10 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-emerald-950/90 border border-emerald-500 text-emerald-300 px-3 py-1 rounded-full text-[10px] font-mono shadow-[0_0_8px_rgba(16,185,129,0.3)]">● Node_OR_01 Active</span>
+                    <span class="bg-emerald-950/90 border border-emerald-500 text-emerald-300 px-3 py-1 rounded-full text-[10px] font-mono shadow-[0_0_8px_rgba(16,185,129,0.3)]">● Node_OR_02 Active</span>
+                    <span class="bg-emerald-950/90 border border-emerald-500 text-emerald-300 px-3 py-1 rounded-full text-[10px] font-mono shadow-[0_0_8px_rgba(16,185,129,0.3)]">● Ledger_Sync_OK</span>
                 </div>
             </div>
-            <div class="flex justify-center gap-4 mt-4">
-                <button class="bg-green-800 hover:bg-green-700 text-white text-xs px-4 py-2 rounded transition">Network Status</button>
-                <button class="bg-green-800 hover:bg-green-700 text-white text-xs px-4 py-2 rounded transition">Support</button>
-                <button class="bg-green-800 hover:bg-green-700 text-white text-xs px-4 py-2 rounded transition">Connect</button>
+
+            <div class="flex justify-center gap-4 border-t border-emerald-900/60 pt-6">
+                <button class="pill-btn rounded-full px-5 py-2 text-xs font-semibold transition">Network Status</button>
+                <button class="pill-btn rounded-full px-5 py-2 text-xs font-semibold transition">Support</button>
+                <button class="pill-btn rounded-full px-5 py-2 text-xs font-semibold transition">Connect</button>
             </div>
         </section>
 
-    </main>
+    </div>
 
-    <footer class="max-w-7xl mx-auto border-t border-green-700/50 mt-12 pt-6 text-center text-xs text-green-300">
-        <p>&copy; 2026 Nullfm.ai. All rights reserved. Machine-Native Autonomy Systems.</p>
+    <footer class="absolute bottom-4 left-0 w-full text-center text-[10px] text-emerald-600/80 z-10">
+        <p>&copy; 2026 Nullfm.ai. Machine-Native Autonomy Systems.</p>
     </footer>
 
 </body>
